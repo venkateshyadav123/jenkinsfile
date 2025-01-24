@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('code and build') {
             steps {
-               sh 'echo Hello World'
+               git 'https://github.com/ramyachetty/maven.git'
+               sh 'mvn clean package'
             }
         }
     }
